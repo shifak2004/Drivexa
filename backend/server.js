@@ -1,6 +1,10 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+// Allowed origins for production CORS (comma-separated), e.g.
+// ALLOWED_ORIGINS=https://driver.example.com,https://rider.example.com
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || '').split(',').map(s => s.trim()).filter(Boolean);
+
 const express = require('express');
 const http = require('http');
 const cors = require('cors');
@@ -20,9 +24,14 @@ const app = express();
 // CORS configuration
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin || /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin)) {
-      return callback(null, true);
-    }
+    // Allow non-browser requests (curl, server-to-server)
+    if (!origin) return callback(null, true);
+
+    // Allow localhost during development
+    if (/^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin)) return callback(null, true);
+
+    // If allowed origins configured, allow only those
+    if (allowedOrigins.length && allowedOrigins.includes(origin)) return callback(null, true);
 
     return callback(new Error(`CORS blocked origin: ${origin}`));
   },
