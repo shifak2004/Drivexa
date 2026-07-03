@@ -1,0 +1,276 @@
+.active-ride-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.active-ride-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.active-ride-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-back {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.active-ride-header h2 {
+  font-size: 1.8rem;
+}
+
+/* Stepper progress */
+.status-stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.82);
+  border: 2px solid var(--text-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.step-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.step-divider {
+  flex: 1;
+  height: 2px;
+  background: var(--text-muted);
+  margin: 0 16px;
+  margin-top: -24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Completed and active stepper stages */
+.step.completed .step-number {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+  box-shadow: 0 10px 24px rgba(79, 191, 143, 0.24);
+}
+
+.step.completed .step-label {
+  color: var(--success);
+}
+
+.step.active .step-number {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.step.active .step-label {
+  color: var(--text-primary);
+}
+
+/* Content Layout */
+.active-ride-content {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+}
+
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.ride-meta-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fare-tag {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent-secondary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.passenger-profile {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.passenger-profile h4 {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.passenger-profile-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.passenger-desc .passenger-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.passenger-desc .passenger-phone {
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+}
+
+.locations-tracking {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loc-group {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.loc-icon {
+  margin-top: 4px;
+}
+
+.loc-icon.green {
+  color: var(--success);
+}
+
+.loc-icon.teal {
+  color: var(--accent-secondary);
+}
+
+.loc-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.loc-lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.loc-txt {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.navigation-actions {
+  margin-top: 10px;
+}
+
+.start-ride-btn, .complete-ride-btn {
+  width: 100%;
+  height: 48px;
+}
+
+.success-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  background: rgba(116, 214, 173, 0.16);
+  border: 1px solid var(--success);
+  color: var(--success);
+  font-weight: 600;
+}
+
+/* Map CSS */
+.map-panel {
+  padding: 0;
+  overflow: hidden;
+  height: 500px;
+}
+
+.active-leaflet-map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.active-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 64px);
+  background-color: var(--bg-primary);
+  color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+  .active-ride-content {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,416 @@
+.landing-page {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 0px 0px 48px 0px;
+}
+
+/* Redesigned Premium Sticky Glass Header */
+.landing-topbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(5, 8, 22, 0.45);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  height: 80px;
+  padding: 0 clamp(16px, 6vw, 80px);
+}
+
+.role-switch,
+.landing-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.role-link,
+.landing-login,
+.landing-signup {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.role-link {
+  color: var(--text-secondary);
+  border: 1px solid var(--glass-border);
+  background: rgba(15, 23, 42, 0.4);
+  padding: 0 16px;
+}
+
+.role-link svg {
+  font-size: 1.1rem;
+}
+
+.role-link:hover,
+.active-role {
+  color: #ffffff;
+  border-color: var(--color-primary);
+  background: var(--accent-glow);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.landing-brand {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-right: 12px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.landing-login {
+  color: #ffffff;
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  padding: 0 20px;
+}
+
+.landing-login:hover {
+  background: var(--accent-glow);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+.landing-signup {
+  color: #ffffff !important;
+  background: var(--gradient-primary);
+  padding: 0 22px;
+  box-shadow: var(--shadow-glow);
+}
+
+.landing-signup:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--gradient-glow);
+  background: var(--gradient-hover);
+}
+
+/* Hero Section Refined */
+.landing-hero {
+  width: min(1200px, 100%);
+  margin: 64px auto 0;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  padding: 0 clamp(16px, 6vw, 40px);
+}
+
+.hero-kicker {
+  color: var(--color-secondary);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.hero-copy h1 {
+  max-width: 720px;
+  margin-top: 8px;
+  font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.hero-copy p {
+  max-width: 540px;
+  margin-top: 20px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.hero-cta {
+  height: 52px;
+  padding: 0 28px;
+  border-radius: 14px;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-secondary {
+  height: 52px;
+  padding: 0 28px;
+  border-radius: 14px;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-secondary:hover {
+  background: var(--accent-glow);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+/* Beautiful Interactive Map Preview Card */
+.ride-preview {
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), var(--gradient-glow);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+
+.ride-preview:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.preview-map {
+  position: relative;
+  min-height: 380px;
+  background:
+    linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, #0c1428 0%, #050816 100%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+}
+
+.route-line {
+  position: absolute;
+  left: 24%;
+  top: 24%;
+  width: 52%;
+  height: 48%;
+  border-left: 3px dashed var(--color-primary);
+  border-bottom: 3px dashed var(--color-primary);
+  border-radius: 0 0 0 40px;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+.map-pin,
+.moving-car {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.pickup-pin {
+  left: 19%;
+  top: 17%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+}
+
+.drop-pin {
+  right: 18%;
+  bottom: 20%;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+.moving-car {
+  left: 48%;
+  top: 49%;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  animation: carMoving 4s ease-in-out infinite;
+}
+
+@keyframes carMoving {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10px, 10px) scale(1.05); }
+}
+
+.preview-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--glass-border);
+}
+
+.preview-panel > div {
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.85);
+  text-align: center;
+}
+
+.preview-label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.preview-panel strong {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Custom Interactive Choices Grid */
+.landing-cards {
+  width: min(1200px, 100%);
+  margin: 64px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0 clamp(16px, 6vw, 40px);
+}
+
+.choice-card {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.choice-card svg {
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.choice-card span {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.choice-card small {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.choice-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+  box-shadow: var(--gradient-glow);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.choice-card:hover svg {
+  transform: scale(1.1) rotate(4deg);
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 992px) {
+  .landing-hero {
+    grid-template-columns: 1fr;
+    margin-top: 48px;
+    text-align: center;
+  }
+  
+  .hero-copy h1 {
+    margin-inline: auto;
+  }
+  
+  .hero-copy p {
+    margin-inline: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .ride-preview {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-topbar {
+    height: auto;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .landing-hero {
+    margin-top: 32px;
+  }
+
+  .landing-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .landing-actions,
+  .role-switch {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .landing-brand {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .role-link,
+  .landing-login,
+  .landing-signup {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-actions a {
+    width: 100%;
+  }
+}

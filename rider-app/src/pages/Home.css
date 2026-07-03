@@ -1,0 +1,375 @@
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 64px;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  height: calc(100vh - 64px);
+  width: 100%;
+}
+
+.booking-panel {
+  height: 100%;
+  border-radius: 0;
+  border-right: 1px solid var(--glass-border);
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  overflow-y: auto;
+  z-index: 10;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.booking-panel h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.panel-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.btn-use-location {
+  background: transparent;
+  border: none;
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  margin-top: 8px;
+  font-weight: 700;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.btn-use-location:hover {
+  color: var(--accent-secondary);
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+}
+
+.btn-search-dest {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-search-dest:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+.fare-estimate-card {
+  margin: 24px 0;
+  padding: 20px;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-glow);
+}
+
+.fare-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fare-item .label {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.fare-item .value {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.fare-highlight {
+  font-size: 1.6rem;
+  color: var(--accent-secondary) !important;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
+
+.book-btn {
+  width: 100%;
+  height: 52px;
+  margin-top: 12px;
+  border-radius: 14px;
+}
+
+/* Map CSS */
+.map-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.home-leaflet-map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Leaflet pulsing marker for user */
+.rider-marker-pulsing {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rider-marker-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary);
+  border: 2px solid white;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+.rider-marker-ring {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(59, 130, 246, 0.4);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-out;
+  z-index: 1;
+}
+
+/* Leaflet Driver Car marker */
+.driver-car-marker {
+  font-size: 1.7rem;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.6));
+  animation: float 2s infinite ease-in-out;
+}
+
+/* Active Booking Panel */
+.active-booking-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.booking-status-badge {
+  margin-bottom: 12px;
+}
+
+.searching-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.sonar-emitter {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  background: rgba(59, 130, 246, 0.15);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.sonar-icon {
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  z-index: 2;
+  animation: pulse 2s infinite;
+}
+
+.sonar-wave {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+  animation: sonar 2.5s linear infinite;
+}
+
+.sonar-wave:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.sonar-wave:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+@keyframes sonar {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.pulse-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  animation: pulse 1.5s infinite;
+}
+
+.driver-details-glass {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--glass-border);
+  padding: 20px;
+  border-radius: var(--border-radius-lg);
+  width: 100%;
+  text-align: left;
+  box-shadow: var(--shadow-glow);
+}
+
+.driver-details-glass h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.driver-avatar-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.avatar-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: white;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.driver-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.driver-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.driver-phone {
+  font-size: 0.9rem;
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+.vehicle-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.active-ride-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.track-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+}
+
+.btn-cancel-ride {
+  background: rgba(239, 68, 68, 0.05);
+  color: var(--error);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 14px;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.btn-cancel-ride:hover {
+  background: var(--error);
+  color: #ffffff;
+  border-color: var(--error);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: calc(100vh - 64px);
+  }
+
+  .booking-panel {
+    width: 100%;
+    height: auto;
+    max-height: 50%;
+    border-right: none;
+    border-bottom: 1px solid var(--glass-border);
+    padding: 20px;
+  }
+  
+  .map-panel {
+    height: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page content transition wrapper */
+.page-container {
+  padding-top: 64px; /* Space for fixed navbar */
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+}
