@@ -2,7 +2,10 @@
 
 Drivexa is a full-stack demo ride-booking platform with separate Rider and Driver web applications and a Node.js + Socket.IO backend.
 
-**Live demo / Deployment:** https://your-drivexa-deployment.example.com  (replace with your real URL)
+**Live deployment:**
+- Backend: https://drivexa-backend.onrender.com
+- Driver: https://drivexa-driver.vercel.app/
+- Rider: https://drivexa.vercel.app/
 
 ## Tech stack
 
