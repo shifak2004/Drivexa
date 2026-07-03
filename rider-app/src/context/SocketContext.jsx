@@ -13,7 +13,7 @@ export const SocketProvider = ({ children }) => {
 
     if (user) {
       // Connect to Socket.IO server
-      socketInstance = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000', {
+      socketInstance = io(import.meta.env.VITE_SOCKET_URL || 'https://drivexa-backend.onrender.com', {
         transports: ['websocket'],
       });
 

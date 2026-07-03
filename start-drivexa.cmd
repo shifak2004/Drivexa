@@ -20,7 +20,7 @@ if errorlevel 1 (
 )
 
 echo Starting Drivexa services...
-echo Backend: http://localhost:5000
+echo Backend: https://drivexa-backend.onrender.com
 echo Rider:   http://localhost:5173
 echo Driver:  http://localhost:5174
 echo.

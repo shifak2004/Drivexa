@@ -37,8 +37,8 @@ JWT_SECRET=replace_this_with_a_secure_value
 Frontend apps can optionally set the API / socket URLs in `driver-app/.env` and `rider-app/.env`:
 
 ```env
-VITE_API_URL=http://localhost:5000/api
-VITE_SOCKET_URL=http://localhost:5000
+VITE_API_URL=https://drivexa-backend.onrender.com/api
+VITE_SOCKET_URL=https://drivexa-backend.onrender.com
 ```
 
 If you deploy the backend to a different host, set `VITE_API_URL` and `VITE_SOCKET_URL` to the deployed addresses.
@@ -79,7 +79,7 @@ npm install
 npm run dev
 ```
 
-The frontends default to `http://localhost:5000/api` for API calls when `VITE_API_URL` is not set.
+The frontends default to `https://drivexa-backend.onrender.com/api` for API calls when `VITE_API_URL` is not set.
 
 ## API overview
 
